@@ -1,0 +1,311 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Checkpoint</title>
+  <link rel="manifest" href="/manifest.json">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+     <link rel="icon" type="image/png" href="favicon.png">
+     
+
+</head>
+<body>
+ <div id="pagewrap"> 
+
+    <div id="loginpage" class="container hide">
+      <div id="innerlogin">
+      <div id="logo"><img src="logo.png"></div>
+        <h2 class="brand2">CHECKPOINT</h2>
+        <input id="txtEmail" type="email" placeholder="Email">
+        <input id="txtPassword" type="password" placeholder="Password">
+        <div id="loginbuttons">
+          <button id="btnLogin" class="btn btn-action" type="submit">Log in</button>
+          <button id="btnSignup" class="btn btn-secondary" type="submit">Sign up</button>
+        </div>
+      </div>
+    </div>
+<nav id="nav">
+    <div>
+   <img src="textlogo.png">
+    <span style="font-size:15px !important;cursor:pointer" onclick="openNav()"><div class="burger"><i class="fas fa-bars"></i></div></span>
+      <ul class="wrapper">
+        <li id="mytripbutton">NEW TRIP</li>
+        <li id="checkinbutton">CHECK IN</li>
+        <li id="profilebutton">PROFILE</li>
+        <li id="weatherbutton">MAP</li>
+        <li id="settingsbutton">APP</li>
+      </ul>
+    </div>
+  </nav>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+
+  
+  <a href="#">NEW TRIP</a>
+  <a href="#">CHECK IN</a>
+  <a href="#">PROFILE</a>
+  <a href="#">MAP</a>
+  <a href="#">APP</a>
+</div>
+
+
+
+
+  <div id="mytrippage" class="container hide">
+
+    <h1 class="brand">My Trip</h1>
+    <div class="bodystyle">
+<!--       <p id="user_data"></p> -->
+    </div>
+  </div>
+
+
+  <div id="newtrippage" class="container hide">
+   
+
+      <div class="bodystyle">
+     
+      <h1 ">New Trip</h1>
+
+        <div class="alert"> Your trip has been saved.</div>
+
+
+        <form method="POST" id="trackForm">
+          
+            <label>Track:</label>
+            <input type="text" name="track" id="track" placeholder="Which track are you going on?">
+         
+            <label>Time:</label>
+            <input type="text" name="time" id="time" placeholder="How long does the track take?">
+        
+        <ul id="">
+        <li class="accordionnewtrip">Duration:<span id="downarrow">&#9662;</span></li>
+        <div class="panelnewtrip">
+          
+          <label>Start:</label>
+            <input type="date" id="startDate" value="2018-01-01">
+            <label>Time:</label>
+            <input type="time" id="startTime" value="12:00">
+          
+          
+            <label>End:</label>
+              <input type="date" id="endDate" value="2018-01-01">
+                <label>Time:</label>
+              <input type="time" id="endTime" value="12:00">
+          </div>
+        </ul>
+          
+
+            <label>History:</label>
+            <input type="text" name="history" id="history" placeholder="Previous experience on this track">
+          
+            <label>Contact:</label>
+            <div class="autocomplete" style="width:100%;">
+              <input id='contact' type="text" name="contact" placeholder="Emergency Contact">
+            </div>
+
+
+          <p>
+            Wait
+              <select name="messagetime" id="messagetime">
+                <option value="300">5 minutes</option>
+                <option value="600">10 minutes</option>
+                <option value="900">15 minutes</option>
+                <option value="1200"> 30 minutes</option>
+                <option value="2700">45 minutes</option>
+                <option value="3600">1 hour</option>
+                <option value="6000">2 hours</option>
+                <option value="7200">3 hours</option>
+                <option value="14400">4 hours</option>
+                <option value="18000">5 hours</option>
+                <option value="21600">6 hours</option>
+                <option value="25200">7 hours</option>
+                <option value="28800">8 hours</option>
+                <option value="32400">9 hours</option>
+                <option value="36000">10 hours</option>
+                <option value="39600">11 hours</option>
+                <option value="43200">12 hours</option>
+                <option value="46800">13 hours</option>
+                <option value="50400">14 hours</option>
+                <option value="54000">15 hours</option>
+                <option value="57600">16 hours</option>
+                <option value="61200">17 hours</option>
+                <option value="64800">18 hours</option>
+                <option value="68400">19 hours</option>
+                <option value="72000">20 hours</option>
+                <option value="75600">21 hours</option>
+                <option value="79200">22 hours</option>
+                <option value="82800">23 hours</option>
+                <option value="86400">24 hours</option>
+              </select>
+              after estimated check in time before sending emergency message.
+          </p>
+          <div class="track"><p>Your track here</p></div>
+          <p class="full">
+            <button class="submitbutton" type="submit">Save</button>
+          </p>
+        </form>
+      </div>
+  </div>
+
+  <!-- CHECK IN PAGE -->
+  <div id="checkinpage" class="container hide">
+    
+    <div class="bodystyle">
+    <h1 >Check In</h1>
+    <iframe src="http://free.timeanddate.com/countdown/i69hr6g7/n264/cf12/cm0/cu4/ct0/cs0/ca0/co0/cr0/ss0/cac6ca2a8/cpc900/pcfff/tcfff/fs100/szw448/szh189/iso2018-06-14T00:00:00" allowTransparency="true" frameborder="0" width="155" height="70"></iframe>
+      <form action="" id="status">
+        <div class="checkoptions">
+          <label class="checkbox">I have arrived at my destination
+            <input type="radio" name="status" id="checkedin" value="checkedin">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <br>
+        <div class="checkoptions">
+          <label class="checkbox">I am taking longer than expected
+            <input type="radio" name="status" id="longer" value="longer">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <br>
+        <div class="checkoptions">
+          <label class="checkbox">I need help
+            <input type="radio" name="status" id="help" value="help">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <p class="full" id="statusbtn">
+          <button type="submit"  class="submitbutton">Update Status</button>
+          
+        </p>  
+      </form>  
+    </div>
+  </div>
+
+<!-- WEATHER PAGE -->
+<div id="weatherpage" class="container hide">
+<h1>Map</h1>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m24!1m8!1m3!1d191588.7928159201!2d174.906137!3d-41.38332!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x6d38a7f2bc9b95eb%3A0x897fe6d9abb9548f!2sOrongorongo+Track%2C+Rimutaka+Forest+Park+5373!3m2!1d-41.348904399999995!2d174.93047909999999!4m5!1s0x6d38a0d29ebf5fc5%3A0x2a00ef6165e06390!2sOrongorongo+River%2C+Wainuiomata+Coast%2C+Lower+Hutt+5373!3m2!1d-41.410408499999996!2d174.9085678!5e0!3m2!1sen!2snz!4v1527741506584" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+        <br> <br>
+            <button class="submitbutton" type="submit">Save</button>
+          </p>
+        
+  </div>
+
+<!-- PROFILE PAGE -->
+  <div id="profilepage" class="container hide">
+    <div class="bodystyle">
+    <h1 >Profile</h1>
+      <ul id="profilelist">
+        <li class="accordion">Current Trip <i class="fas fa-angle-down"></i></li>
+        <div class="panel">
+                <p id="user_data"></p>
+                <p id="clocky"></p>
+
+        </div>
+        
+        <li class="accordion">My Info <i class="fas fa-angle-down"></i></li>
+        <div class="panel">
+          <form id="myName">
+            <input id="txtName" type="text" placeholder="Name">
+              <button class="changebutton"  type="submit">Change</button>
+          </form>
+          <p id="myuserName"></p>
+          <p id="newstatus"></p>
+        </div>
+
+        <li class="accordion">Emergency Contacts <i class="fas fa-angle-down"></i></li>
+        <div class="panel">
+            <div id="existingcontacts"></div>
+          <form id="contactsForm">
+            <label>Add a new emergency contact:</label><br>
+            <input type="text" name="contactName" class="contactInput" id="contactName" placeholder="Name">
+            <input type="email" name="contactEmail" class="contactInput" id="contactEmail" placeholder="Email">
+              <button class="addbutton"  type="submit">Add</button>
+          </form>
+        </div>
+        <li class="accordion">Past Trips <i class="fas fa-angle-down"></i></li>
+        <div class="panel">
+                <div id="pastuserdata"></div>
+          <!-- <p id="pastuserdata"></p> -->
+        </div>
+      </ul>
+      <button id="btnLogout" class="btn btn-action">Logout</button>
+    </div>
+  </div>
+
+<!-- SETTINGS PAGE -->
+    <div id="settingspage" class="container hide">
+  
+    <div class="bodystyle">
+          <h1> Get The App:</h1>
+          <img src="app.jpg">
+          <div class="fulllogout">
+    </div>
+    
+     <button id="btnLogout" class="btn btn-action">Download</button>
+  </div>
+  </div>
+
+
+  <!--FOOTER  -->
+<footer id="footer">Checkpoint 2018</footer>
+ </div>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+  <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.12.1/firebase-messaging.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+
+  <script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>
+
+<!--               <select>
+                <option>00:00</option>
+                <option>01:00</option>
+                <option>02:00</option>
+                <option>03:00</option>
+                <option>04:00</option>
+                <option>05:00</option>
+                <option>06:00</option>
+                <option>06:00</option>
+                <option>07:00</option>
+                <option>08:00</option>
+                <option>09:00</option>
+                <option>10:00</option>
+                <option>11:00</option>
+                <option>12:00</option>
+                <option>13:00</option>
+                <option>14:00</option>
+                <option>15:00</option>
+                <option>16:00</option>
+                <option>17:00</option>
+                <option>18:00</option>
+                <option>19:00</option>
+                <option>20:00</option>
+                <option>21:00</option>
+                <option>22:00</option>
+                <option>23:00</option>
+                <option>24:00</option>
+              </select> --> 
